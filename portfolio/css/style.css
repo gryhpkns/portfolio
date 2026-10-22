@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -33,4 +33,26 @@ footer {
 
 a {
   color: #111;
+}
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #000000;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
