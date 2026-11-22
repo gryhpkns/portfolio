@@ -10,6 +10,7 @@
       margin: 0;
       color: #111;
       background: #fff;
+      overflow-x: hidden;
     }
 
     a { color: #111; }
@@ -95,7 +96,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 1rem;
     }
 
@@ -196,7 +197,10 @@
     }
 
     @media (max-width: 800px) {
-      .layout { flex-direction: column; }
+      .layout {
+        flex-direction: column;
+        align-items: stretch;
+      }
 
       .sidebar {
         flex-basis: auto;
@@ -225,7 +229,12 @@
         padding: 0.8rem 1rem;
       }
 
-      main { padding: 1.5rem; }
+      main {
+        flex: none;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.5rem;
+      }
 
       .grid a { height: 200px; }
     }
