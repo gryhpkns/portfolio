@@ -20,16 +20,17 @@
     }
 
     .sidebar {
-      flex: 0 0 220px;
+      flex: 0 0 320px;
       position: sticky;
       top: 0;
       height: 100vh;
+      overflow-y: auto;
       box-sizing: border-box;
-      padding: 2rem 1.5rem;
+      padding: 2rem;
       border-right: 1px solid #e5e5e5;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .sidebar .logo img {
@@ -38,14 +39,53 @@
       display: block;
     }
 
-    .sidebar nav {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .resume h2 {
+      margin: 0 0 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
-    .sidebar nav a { text-decoration: none; }
-    .sidebar nav a:hover { text-decoration: underline; }
+    .resume section {
+      margin-bottom: 1.5rem;
+    }
+
+    .job {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .job strong,
+    .job span {
+      display: block;
+    }
+
+    .job span {
+      color: #555;
+      font-size: 0.8rem;
+    }
+
+    .resume ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .resume-link {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      border: 1px solid #111;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .resume-link:hover {
+      background: #111;
+      color: #fff;
+    }
 
     main {
       flex: 1;
@@ -135,16 +175,14 @@
       animation: scroll 20s linear infinite;
     }
 
-    /* Wrap images in elements to keep spacing math identical */
     .marquee-item {
       display: block;
       flex-shrink: 0;
-      padding-right: 5rem; 
+      padding-right: 5rem;
     }
 
     .marquee-item img {
       height: 80px;
-      width: 200;
       display: block;
     }
 
@@ -156,6 +194,18 @@
     @media (prefers-reduced-motion: reduce) {
       .track { animation: none; }
     }
+
+    @media (max-width: 800px) {
+      .layout { flex-direction: column; }
+      .sidebar {
+        flex-basis: auto;
+        width: 100%;
+        position: static;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid #e5e5e5;
+      }
+    }
   </style>
 </head>
 <body>
@@ -164,11 +214,46 @@
 
     <aside class="sidebar">
       <a href="index.html" class="logo">
-        <img src="images/logo.svg" alt="Your Name logo">
+        <img src="images/logo.svg" alt="Gary Hopkins logo">
       </a>
-      <nav>
-        <a href="index.html">Work</a>
-      </nav>
+
+      <div class="resume">
+        <section>
+          <h2>Experience</h2>
+          <div class="job">
+            <strong>Graphic Designer</strong>
+            <span>Current Firm · 20XX – Present</span>
+          </div>
+          <div class="job">
+            <strong>Graphic Designer</strong>
+            <span>BDO Canada · 20XX – 20XX</span>
+          </div>
+          <div class="job">
+            <strong>Graphic Designer</strong>
+            <span>Creator Warehouse · 20XX – 20XX</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Skills</h2>
+          <ul>
+            <li>Brand identity and assets</li>
+            <li>Digital marketing and social</li>
+            <li>Print and collateral</li>
+            <li>Packaging and merchandise</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <div class="job">
+            <strong>Degree / Program</strong>
+            <span>School · 20XX</span>
+          </div>
+        </section>
+
+        <a href="resume.pdf" class="resume-link" download>Download PDF</a>
+      </div>
     </aside>
 
     <main>
@@ -191,7 +276,6 @@
         <h2>Brands I've worked with</h2>
         <div class="marquee">
           <div class="track">
-            <!-- Set 1 -->
             <div class="marquee-item"><img src="svgs/brand-1.svg" alt="Brand 1"></div>
             <div class="marquee-item"><img src="svgs/brand-2.svg" alt="BDO Canada"></div>
             <div class="marquee-item"><img src="svgs/brand-3.svg" alt="London Knights"></div>
@@ -200,8 +284,7 @@
             <div class="marquee-item"><img src="svgs/brand-6.svg" alt="Brand 6"></div>
             <div class="marquee-item"><img src="svgs/brand-7.svg" alt="Brand 7"></div>
             <div class="marquee-item"><img src="svgs/brand-8.svg" alt="Brand 8"></div>
-            
-            <!-- Set 2 -->
+
             <div class="marquee-item"><img src="svgs/brand-1.svg" alt="Brand 1"></div>
             <div class="marquee-item"><img src="svgs/brand-2.svg" alt="BDO Canada"></div>
             <div class="marquee-item"><img src="svgs/brand-3.svg" alt="London Knights"></div>
