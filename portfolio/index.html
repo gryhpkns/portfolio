@@ -114,17 +114,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
-      box-sizing: border-box;
     }
 
     .tile-logo img {
       display: block;
-      width: auto;
-      height: auto;
-      max-width: 60%;
-      max-height: 60%;
+      width: 60%;
+      height: 60%;
       object-fit: contain;
+      object-position: center;
     }
 
     .overlay {
@@ -250,8 +247,6 @@
       }
 
       .grid a { height: 200px; }
-
-      .tile-logo { padding: 1.5rem; }
     }
 
     @media (max-width: 500px) {
@@ -259,11 +254,9 @@
 
       .grid a { height: 160px; }
 
-      .tile-logo { padding: 1rem; }
-
       .tile-logo img {
-        max-width: 70%;
-        max-height: 70%;
+        width: 70%;
+        height: 70%;
       }
 
       .marquee-item { padding-right: 3rem; }
